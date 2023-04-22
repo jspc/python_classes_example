@@ -19,8 +19,9 @@ $ pipenv install
 This project contains tests:
 
 ```bash
-$ nose2 -v
+$ nose2
 test_init (game.test_player.TestNPC) ... ok
+test_resurrect_is_a_nop (game.test_player.TestNPC) ... ok
 test_add_weapon (game.test_player.TestPlayer) ... ok
 test_attack (game.test_player.TestPlayer) ... ok
 test_attack_and_kill (game.test_player.TestPlayer) ... ok
@@ -41,20 +42,20 @@ test_simulate_attack_by_dead_player (test_main.TestMain) ... ok
 test_simulate_attack_on_dead_player (test_main.TestMain) ... ok
 
 ----------------------------------------------------------------------
-Ran 19 tests in 0.003s
+Ran 20 tests in 0.003s
 
 OK
 Name                  Stmts   Miss  Cover
 -----------------------------------------
 game/__init__.py          0      0   100%
-game/player.py           43      1    98%
-game/test_player.py      70      0   100%
+game/player.py           43      0   100%
+game/test_player.py      77      0   100%
 game/test_weapon.py      26      0   100%
 game/weapon.py           29      0   100%
 main.py                  33     12    64%
 test_main.py             28      0   100%
 -----------------------------------------
-TOTAL                   229     13    94%
+TOTAL                   236     12    95%
 ```
 
 ## Running
