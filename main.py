@@ -20,6 +20,7 @@ default_weapon = weapons[0]
 
 fake = Faker()
 
+
 def simulate_attack(attacker, victim):
     # A dead attacker can't attack anything, so resurrect
     # and continue, representing a missed turn
@@ -42,16 +43,14 @@ def create_player():
     return player
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Create a load of NPCS
     for _ in range(250):
         players.append(NPC())
 
-
     # Create a load of players and give them each a random weapon
     for _ in range(25):
         players.append(create_player())
-
 
     # Simulate a load of attacks
     for _ in range(100_000):
@@ -59,7 +58,6 @@ if __name__ == '__main__':
         victim = random.sample(players, 1)[0]
 
         simulate_attack(attacker, victim)
-
 
     # Let's have a look at K/Ds for non NPCs
     for player in players:
