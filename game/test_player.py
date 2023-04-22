@@ -110,3 +110,13 @@ class TestNPC(unittest.TestCase):
             (p.alive, True),
         ]:
             self.assertEqual(assertion[0], assertion[1])
+
+    def test_resurrect_is_a_nop(self):
+        p = NPC()
+        self.assertEqual(p.alive, True)
+
+        p.die()
+        self.assertEqual(p.alive, False)
+
+        p.resurrect()
+        self.assertEqual(p.alive, False)
